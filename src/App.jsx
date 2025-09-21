@@ -173,10 +173,11 @@ export default function PortfolioSite() {
 
           {/* Right side (Image sliding in) */}
           <motion.div
+            style={{ willChange: "transform" }}
             initial={{ x: "100%", opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 1, ease: "easeOut" }}
+            transition={{ type: "spring", stiffness: 60, damping: 20 }}
             className="hidden md:block rounded-2xl overflow-hidden shadow-lg"
           >
             <img
