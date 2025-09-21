@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from "react";
-import { Menu, X, Mail, Phone, MapPin, ExternalLink, PlayCircle, Github, Linkedin, Filter } from "lucide-react";
+import { Menu, X, Mail, Phone, MapPin, ExternalLink, PlayCircle, Instagram, Facebook, Filter } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 
 
@@ -359,10 +359,11 @@ export default function PortfolioSite() {
                 <p className="flex items-center gap-3">
                   <MapPin className="h-4 w-4 opacity-70" /> Zug, Switzerland
                 </p>
-                <div className="flex items-center gap-4 pt-2">
-                  <a href="#" className="flex items-center gap-2 hover:opacity-70"><Github className="h-4 w-4" /> GitHub</a>
-                  <a href="#" className="flex items-center gap-2 hover:opacity-70"><Linkedin className="h-4 w-4" /> LinkedIn</a>
+                <div className="flex items-center gap-4 pt-2 text-neutral-600">
+                  <Instagram className="h-5 w-5" />
+                  <Facebook className="h-5 w-5" />
                 </div>
+
               </div>
             </div>
 
