@@ -1,0 +1,46 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "projects": "Projekte",
+    "videos": "Videos",
+    "about": "Über uns",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "title": "Zeitgenössische Innenräume & visuelle Geschichten",
+    "subtitle": "Minimale Formen. Natürliche Materialien. Präzise Details. Entdecken Sie ein kuratiertes Portfolio von Räumen und Filmen.",
+    "viewProjects": "Projekte ansehen",
+    "contact": "Kontakt"
+  },
+  "projects": {
+    "title": "Projekte",
+    "description": "Eine Auswahl realisierter Arbeiten in den Bereichen Wohnen, Einzelhandel und Arbeitsräume.",
+    "search": "Projekte suchen"
+  },
+  "videos": {
+    "title": "Video-Portfolio",
+    "description": "Fallstudien, Rundgänge und Einblicke hinter die Kulissen."
+  },
+  "about": {
+    "title": "Über uns",
+    "description": "Wir schaffen raffinierte, funktionale Räume mit einem Fokus auf Proportion, Licht und Materialehrlichkeit. Unser Portfolio umfasst Wohn-, Einzelhandels- und Arbeitsumgebungen. Vom Konzept bis zur Fertigstellung arbeiten wir eng mit Kunden und Partnern zusammen.",
+    "stats": {
+      "completed": "Abgeschlossene Projekte",
+      "cities": "Städte",
+      "awards": "Auszeichnungen",
+      "years": "Jahre"
+    }
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Haben Sie ein Projekt im Kopf? Lassen Sie uns sprechen.",
+    "form": {
+      "firstName": "Vorname",
+      "lastName": "Nachname",
+      "email": "E-Mail",
+      "message": "Nachricht",
+      "send": "Nachricht senden",
+      "demoNote": "Dieses Formular ist eine Demo. Verbinden Sie es mit Ihrem Backend oder einem Service wie Formspree."
+    }
+  }
+}

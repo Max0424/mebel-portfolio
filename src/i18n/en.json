@@ -1,0 +1,46 @@
+{
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "videos": "Videos",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Contemporary interiors & visual stories",
+    "subtitle": "Minimal forms. Natural materials. Precision details. Explore a curated portfolio of spaces and films.",
+    "viewProjects": "View Projects",
+    "contact": "Contact"
+  },
+  "projects": {
+    "title": "Projects",
+    "description": "A selection of built work across residential, retail, and workspace.",
+    "search": "Search projects"
+  },
+  "videos": {
+    "title": "Video Portfolio",
+    "description": "Case studies, walkthroughs, and behind-the-scenes films."
+  },
+  "about": {
+    "title": "About",
+    "description": "We create refined, functional spaces with a focus on proportion, light, and material honesty. Our portfolio spans residential, retail, and workplace environments. From concept to completion, we partner closely with clients and collaborators.",
+    "stats": {
+      "completed": "Completed Projects",
+      "cities": "Cities",
+      "awards": "Awards",
+      "years": "Years"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Have a project in mind? Let’s talk.",
+    "form": {
+      "firstName": "First name",
+      "lastName": "Last name",
+      "email": "Email",
+      "message": "Message",
+      "send": "Send message",
+      "demoNote": "This form is a demo. Hook it to your backend or a service like Formspree."
+    }
+  }
+}

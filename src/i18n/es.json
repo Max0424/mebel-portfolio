@@ -1,0 +1,45 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "projects": "Proyectos",
+    "videos": "Videos",
+    "about": "Nosotros",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "title": "Interiores contemporáneos y historias visuales",
+    "subtitle": "Formas mínimas. Materiales naturales. Detalles de precisión. Explora un portafolio curado de espacios y películas.",
+    "viewProjects": "Ver proyectos",
+    "contact": "Contacto"
+  },
+  "projects": {
+    "title": "Proyectos",
+    "description": "Una selección de trabajos en residencial, comercial y espacios de trabajo."
+  },
+  "videos": {
+    "title": "Portafolio de videos",
+    "description": "Casos de estudio, recorridos y películas detrás de escena."
+  },
+  "about": {
+    "title": "Nosotros",
+    "description": "Creamos espacios refinados y funcionales con un enfoque en proporción, luz y materiales honestos. Nuestro portafolio abarca proyectos residenciales, comerciales y de oficinas. Desde el concepto hasta la finalización, trabajamos estrechamente con clientes y colaboradores.",
+    "stats": {
+      "completed": "Proyectos completados",
+      "cities": "Ciudades",
+      "awards": "Premios",
+      "years": "Años"
+    }
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "¿Tienes un proyecto en mente? Hablemos.",
+    "form": {
+      "firstName": "Nombre",
+      "lastName": "Apellido",
+      "email": "Correo electrónico",
+      "message": "Mensaje",
+      "send": "Enviar mensaje",
+      "note": "Este formulario es una demo. Conéctalo a tu backend o a un servicio como Formspree."
+    }
+  }
+}
