@@ -102,8 +102,9 @@ export default function PortfolioSite() {
       <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/90 border-b border-neutral-200">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between">
-            <a href="#home" className="font-semibold tracking-wide text-xl">
-              Bawa Business
+            <a href="#home" className="font-semibold tracking-wide text-xl flex items-baseline gap-1">
+              <span>Bawa Business</span>
+              <span className="font-light text-neutral-500 text-lg">Küche</span>
             </a>
 
             {/* Nav + Language */}
@@ -163,6 +164,62 @@ export default function PortfolioSite() {
               {open ? <X /> : <Menu />}
             </button>
           </div>
+
+          {/* Mobile menu panel */}
+          {open && (
+            <div
+              className="md:hidden fixed inset-x-0 top-16 z-[60] bg-white border-t border-neutral-200 shadow-lg"
+              role="dialog"
+              aria-modal="true"
+            >
+              <nav className="mx-auto max-w-7xl px-4 py-3 flex flex-col">
+                {NAV.map((n) => (
+                  <a
+                    key={n.key}
+                    href={n.href}
+                    className="py-3 text-base border-b last:border-b-0 hover:bg-neutral-50"
+                    onClick={() => setOpen(false)}
+                  >
+                    {t(`nav.${n.key}`)}
+                  </a>
+                ))}
+
+                {/* Language selector */}
+                <div className="pt-2">
+                  <button
+                    onClick={() => setLangOpen((v) => !v)}
+                    className="px-3 py-2 rounded-md border text-sm font-medium"
+                  >
+                    {i18n.language.toUpperCase()}
+                  </button>
+                  <AnimatePresence>
+                    {langOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -8 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -8 }}
+                        className="mt-2 inline-flex rounded-md border bg-white shadow-sm overflow-hidden"
+                      >
+                        {["en", "de", "es", "ru"].map((lng) => (
+                          <button
+                            key={lng}
+                            onClick={() => {
+                              i18n.changeLanguage(lng);
+                              setLangOpen(false);
+                              setOpen(false);
+                            }}
+                            className="px-3 py-2 text-sm"
+                          >
+                            {lng.toUpperCase()}
+                          </button>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              </nav>
+            </div>
+          )}
         </div>
       </header>
 
@@ -211,7 +268,7 @@ export default function PortfolioSite() {
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ type: "spring", stiffness: 60, damping: 20 }}
-            className="hidden md:block rounded-2xl overflow-hidden shadow-lg"
+            className="block rounded-2xl overflow-hidden shadow-lg mt-8 md:mt-0"
           >
             <img
               src="/modern-white-kitchen.jpg"
@@ -407,18 +464,18 @@ export default function PortfolioSite() {
 
               <div className="mt-6 space-y-3 text-sm">
                 <a
-                  href="mailto:hello@example.com"
+                  href="mailto:bawabusinessgmbh@gmail.com"
                   className="flex items-center gap-3 group"
                 >
                   <Mail className="h-4 w-4 opacity-70 group-hover:opacity-100" />{" "}
-                  hello@example.com
+                  bawabusinessgmbh@gmail.com
                 </a>
                 <a
                   href="tel:+41000000000"
                   className="flex items-center gap-3 group"
                 >
                   <Phone className="h-4 w-4 opacity-70 group-hover:opacity-100" />{" "}
-                  +41 00 000 00 00
+                  +41 76 619 49 39
                 </a>
                 <p className="flex items-center gap-3">
                   <MapPin className="h-4 w-4 opacity-70" /> Zug, Switzerland
@@ -432,7 +489,8 @@ export default function PortfolioSite() {
 
             {/* Contact form */}
             <form
-              onSubmit={(e) => e.preventDefault()}
+              action="https://formspree.io/f/movkwkjz"
+              method="POST"
               className="rounded-3xl p-6 border bg-neutral-50"
             >
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -441,6 +499,7 @@ export default function PortfolioSite() {
                     {t("contact.form.firstName")}
                   </label>
                   <input
+                    name="firstName"
                     required
                     className="mt-1 w-full rounded-xl border px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-neutral-300"
                   />
@@ -449,7 +508,10 @@ export default function PortfolioSite() {
                   <label className="text-xs text-neutral-600">
                     {t("contact.form.lastName")}
                   </label>
-                  <input className="mt-1 w-full rounded-xl border px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-neutral-300" />
+                  <input
+                    name="lastName"
+                    className="mt-1 w-full rounded-xl border px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-neutral-300"
+                  />
                 </div>
                 <div className="sm:col-span-2">
                   <label className="text-xs text-neutral-600">
@@ -457,6 +519,7 @@ export default function PortfolioSite() {
                   </label>
                   <input
                     type="email"
+                    name="email"
                     required
                     className="mt-1 w-full rounded-xl border px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-neutral-300"
                   />
@@ -466,18 +529,19 @@ export default function PortfolioSite() {
                     {t("contact.form.message")}
                   </label>
                   <textarea
+                    name="message"
                     rows={5}
                     required
                     className="mt-1 w-full rounded-xl border px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-neutral-300"
                   />
                 </div>
               </div>
-              <button className="mt-4 px-5 py-3 rounded-2xl bg-neutral-900 text-white text-sm font-medium hover:bg-neutral-800 transition-colors">
+              <button
+                type="submit"
+                className="mt-4 px-5 py-3 rounded-2xl bg-neutral-900 text-white text-sm font-medium hover:bg-neutral-800 transition-colors"
+              >
                 {t("contact.form.send")}
               </button>
-              <p className="mt-2 text-xs text-neutral-500">
-                {t("contact.form.demoNote")}
-              </p>
             </form>
           </div>
         </div>
